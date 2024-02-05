@@ -1,0 +1,42 @@
+<nz-card [nzBordered]="false">
+    <div id="card-header">
+    </div><div>
+      <img src="/assets/sloth.jpg" id="icon" alt="SLOTH" />
+      </div>
+    <h2 class="login-header">Login to your MyCuteSloth account</h2>
+    <form nz-form [formGroup]="loginForm" (ngSubmit)="login()" class="login-form">
+        <nz-form-item>
+          <nz-form-control nzErrorTip>
+            <nz-input-group>
+              <input type="email" nz-input formControlName="email" placeholder="Email" />
+            </nz-input-group>
+            <div class="error-message" *ngIf="this.loginForm.get('email')?.touched && this.loginForm.get('email')?.hasError('required')"
+            >Email is required</div>
+            <div class="error-message" *ngIf="this.loginForm.get('email')?.touched && this.loginForm.get('email')?.hasError('email')"
+            >Please enter a valid Email address</div>
+          </nz-form-control>
+        </nz-form-item>
+        <nz-form-item>
+          <nz-form-control nzErrorTip="Please enter your Password!">
+            <nz-input-group>
+              <input type="password" nz-input formControlName="password" placeholder="Password" />
+            </nz-input-group>
+          </nz-form-control>
+        </nz-form-item>
+
+        <div nz-row class="mt-30">
+          <div nz-col [nzSpan]="12">
+            <label nz-checkbox formControlName="remember">
+              <span>Remember me</span>
+            </label>
+          </div>
+          <div nz-col [nzSpan]="12">
+            <a class="login-form-forgot" [routerLink]="['../forgot-password']">Forgot password</a>
+          </div>
+        </div>
+
+        <button nz-button class="login-form-button mt-30 ml-20" [nzType]="'primary'" [disabled]="!loginForm.valid">Log in</button>
+        Or
+        <a class="mr-20" [routerLink]="['../sign-up']">sign up now!</a>
+      </form>
+</nz-card>

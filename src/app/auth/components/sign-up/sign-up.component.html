@@ -1,0 +1,56 @@
+<nz-card [nzBordered]="false">
+        <form nz-form [formGroup]="registerForm" (ngSubmit)="register()">
+            <nz-form-item>
+                <nz-form-control nzErrorTip="Please choose a username">
+                  <input type="text" id="username" placeholder="Username" formControlName="username" />
+                </nz-form-control>
+              </nz-form-item>
+            <nz-form-item>
+              <nz-form-control nzErrorTip>
+                <input nz-input type="email" formControlName="email" id="email" placeholder="Email"/>
+              </nz-form-control>
+            </nz-form-item>
+            <div class="error-message" *ngIf="registerForm.get('email')?.touched && registerForm.get('email')?.hasError('required')"
+            >Email is required</div>
+            <div class="error-message" *ngIf="registerForm.get('email')?.touched && registerForm.get('email')?.hasError('email')"
+            >Please enter a valid Email address</div>
+            <nz-form-item>
+              <nz-form-control nzErrorTip="Please enter a password">
+                <input
+                  nz-input
+                  type="password"
+                  id="password"
+                  placeholder="Password"
+                  formControlName="password"
+                />
+              </nz-form-control>
+            </nz-form-item>
+            <app-password-strength *ngIf="registerForm.value?.password" [passwordToCheck]="registerForm.value?.password!"></app-password-strength>
+            
+            <nz-form-item>
+              <nz-form-control nzErrorTip>
+                <input nz-input placeholder="Confirm Password" type="password" formControlName="confirmPassword" id="checkPassword"/>
+              </nz-form-control>
+            </nz-form-item>
+            <div class="error-message" *ngIf="registerForm.get('confirmPassword')?.touched && registerForm.get('confirmPassword')?.hasError('required')"
+            >Please confirm your password</div>
+            <div class="error-message" *ngIf="this.registerForm.get('confirmPassword')?.dirty && this.registerForm.hasError('passwordsNotMatching')"
+            >The passwords you entered are inconsistent</div>
+            <nz-form-item class="mt-30" nz-row>
+              <nz-form-control>
+                <label nz-checkbox formControlName="agree">
+                  <span>
+                    I have read the
+                    <a>terms & conditions</a>
+                  </span>
+                </label>
+              </nz-form-control>
+            </nz-form-item>
+            <nz-form-item class="mt-30" nz-row>
+              <nz-form-control>
+                <button nz-button nzType="primary" [disabled]="!registerForm.valid">Register</button>
+              </nz-form-control>
+            </nz-form-item>
+          </form>
+        <a [routerLink]="['../login']">Back to Login page</a>
+</nz-card>
