@@ -15,3 +15,12 @@ An Auth app including:
 All forms include validation
 
 Used angular-jwt package and mocked all calls (saved a mock token in local storage)
+
+
+https://github.com/yarin-mansour/auth-page/assets/69892371/0885f955-dd85-4302-a48f-67945c27ada6
+
+
+
+
+https://github.com/yarin-mansour/auth-page/assets/69892371/cec4abc1-c53a-4555-a35d-1b23829524f3
+
