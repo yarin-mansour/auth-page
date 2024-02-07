@@ -9,9 +9,9 @@ export const fakeLoginResponse: LoginResponse = {
   accessToken: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJPbmxpbmUgSldUIEJ1aWxkZXIiLCJpYXQiOjE3MDcyNzE2NjgsImV4cCI6MTczODgwNzY2OCwiYXVkIjoid3d3LmV4YW1wbGUuY29tIiwic3ViIjoianJvY2tldEBleGFtcGxlLmNvbSIsIkdpdmVuTmFtZSI6IkpvaG5ueSIsIlN1cm5hbWUiOiJSb2NrZXQiLCJFbWFpbCI6Impyb2NrZXRAZXhhbXBsZS5jb20iLCJSb2xlIjpbIk1hbmFnZXIiLCJQcm9qZWN0IEFkbWluaXN0cmF0b3IiXX0.DyU0UYXDbrkIV-mpGTfbss9_6WeuvER7odwGat_Ua9Y',
   refreshToken: {
     id: 1,
-    userId: 2,
+    userId: 1,
     token: 'someFakeToken',
-    refreshCount: 2,
+    refreshCount: 3,
     expiryDate: new Date(),
   },
   tokenType: 'JWT'
